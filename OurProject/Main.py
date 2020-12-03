@@ -15,11 +15,14 @@ for i in range(1, 10):
     kind = {'diamond': 1, 'spade': 2, 'heart': 3, 'club': 4}
     card1=Card(lst1[0], lst1[1])
     card2=Card(lst2[0], lst2[1])
+    print(f"round {i+1} \nthe cards whict droped are: \n {card1.show()} \n {card2.show()}")
     if card1.war(card2) == True:
         cplayer += 1
         c.player1.add_card(card1)
         c.player1.add_card(card2)
+        print(f"the winner in this round is {c.player1.name}\n\n")
     else:
+        print(f"the winner in this round is {c.player2.name}\n\n")
         c.player2.add_card(card1)
         c.player2.add_card(card2)
 
