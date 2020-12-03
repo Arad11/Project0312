@@ -25,7 +25,7 @@ class Deckofcards:
     def __str__(self):
         return f"the package is {self.package}"
 
-    def suffle_the_pack(self):
+    def shuffle_the_pack(self):
         random.shuffle(self.package)
         return self.package
 

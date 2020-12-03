@@ -17,7 +17,7 @@ class CardGame:
         return f'player1 {self.player1} \n player2 {self.player2}'
 
     def new_game(self, cardsnum):
-        deck = Deckofcards().suffle_the_pack()
+        deck = Deckofcards().shuffle_the_pack()
         self.deck = deck
         self.player1.set_hand(self.deck, cardsnum)
         self.player2.set_hand(self.deck, cardsnum)

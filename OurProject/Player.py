@@ -21,11 +21,14 @@ class Player:
 
     def get_random_card(self):
         packlen = len(self.pack)
-        randnum = random.randint(0, packlen-1)
-        return self.pack.pop(randnum)
+        if packlen == 1:
+            return self.pack.pop()
+        else:
+            randnum = random.randint(0, packlen - 1)
+            return self.pack.pop(randnum)
 
     def add_card(self, newcard):
         kind = {1: 'diamond', 2: 'spade', 3: 'heart', 4: 'club'}
-        x= kind[newcard.suit]
-        self.pack.append((newcard.value, kind[newcard.suit]))
-        return
+        x = kind[newcard.suit]
+        self.pack.append((newcard.value, x))
+        return self.pack
