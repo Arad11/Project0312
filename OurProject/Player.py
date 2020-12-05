@@ -15,11 +15,34 @@ class Player:
         return f'{self.name} have the package {self.pack}'
 
     def set_hand(self, deck, cardsnum):
+        """
+        פעולה שמחלקת לשחקן חבילת קלפים חדשה
+        """
+        """
+        לא עובד
+        if type(deck) is not list:
+            print("invalid number. insert list")
+            return None
+        else:
+            for i in range(len(deck)):
+                if type(deck[i]) is not Card:
+                    print("in the package the values must be cards1")
+                    return None
+             """
+        if type(cardsnum) is not int:
+            print("invalid value. insert number")
+            return None
+        if cardsnum < 1 or cardsnum > len(deck):
+            print("invalid number. insert number between 1 and package length")
+            return None
         for i in range(0, cardsnum):
             self.pack.append(deck.pop(i))
         return self.pack
 
     def get_random_card(self):
+        """
+        פעולה שבוחרת קלף מחבילה של השחקן מוציאה אותו בלי להחזיק לחבילה
+        """
         packlen = len(self.pack)
         if packlen == 1:
             return self.pack.pop()
@@ -28,7 +51,10 @@ class Player:
             return self.pack.pop(randnum)
 
     def add_card(self, newcard):
+        """
+        פעולה שמוסיפה קלף לחבילה של שחקן מסוים
+        """
         kind = {1: 'diamond', 2: 'spade', 3: 'heart', 4: 'club'}
-        x = kind[newcard.suit]
-        self.pack.append((newcard.value, x))
+        c ={newcard.value: kind[newcard.suit]}
+        self.pack.append(c)
         return self.pack
